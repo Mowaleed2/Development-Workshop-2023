@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Development workshop 2023</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="js/quiz.js" type="text/javascript"></script>
+</head>
+<style>
+  
+  body {
+   margin:10px 0px 0px 0px;
+   padding:0px;
+   background:#5F6A6A ;
+}
+
+#container{
+   font-size:20px;
+   font-family:"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+   height:500px;
+   width:750px;
+   margin:auto;
+   background:#f8f6f0;
+   padding: 20px 25px;
+   color: #333;
+   border-radius:10px;
+}
+
+#container h1 {
+   font-weight:300;
+   margin:0px;
+   padding:10px;
+   font-size:50px;
+   background-color:#444;
+   color:#fff;
+   text-align:center;
+   border-radius:300px;
+}
+
+#question {
+   font-size:40px;
+   margin-bottom:30px;
+}
+
+#answer1 {
+   margin-bottom: 10px;
+   text-align: left;
+}
+
+#answer2 {
+   margin-bottom: 10px;
+   text-align: left;
+}
+
+#answer3 {
+   margin-bottom: 10px;
+   text-align: left;
+}
+
+#answer4 {
+   margin-bottom: 10px;
+   text-align: left;
+}
+
+button {
+   padding:5px 15px; 
+   background:#ccc; 
+   border:0 none;
+   cursor:pointer;
+   border-radius: 3px;
+   border-radius: 5px; 
+}
+
+input[type=button] {
+   padding:5px 15px; 
+   background:#ccc; 
+   border:0 none;
+   cursor:pointer;
+   border-radius: 3px;
+   border-radius: 5px; 
+}
+
+
+
+  </style>
+  <script>
+    // total score
+var score = 0;  // set score to zero
+
+// question 1 and answers
+function question1() {
+   document.getElementById("start").style.display = "none";
+   document.getElementById("question").innerHTML = "1. TNPS BM in Kpi is?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q1_a1' name='answer'>TZ AVR";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q1_a2' name='answer'>Region AVR";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q1_a3' name='answer'>62%";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question1_answer()' value='Next'>";
+} // end of question1()
+
+// question 2 and answers
+function question2() {
+   document.getElementById("question").innerHTML = "2.  Productively and operation Is ... % From KPI?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q2_a1' name='answer'>27%";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q2_a2' name='answer'>45%";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q2_a3' name='answer'>28%";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question2_answer()' value='Next'>";
+} // end of question2()
+
+// question 3 and answers
+function question3() {
+   document.getElementById("question").innerHTML = "3.in TNPS question if customer choose number 7 he is ....?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q3_a1' name='answer'>Promoter";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q3_a2' name='answer'>Passive";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q3_a3' name='answer'>Detractor";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question3_answer()' value='Next'>";
+} // end of question3()
+
+// question 4 and answers
+function question4() {
+   document.getElementById("question").innerHTML = "4.Conversion rate part is consider beneath which part in KPI ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q4_a1' name='answer'>Sales";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q4_a2' name='answer'>Productivity & operation";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q4_a3' name='answer'>Customer experience";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question4_answer()' value='Next'>";
+} // end of question4()
+
+// question 5 and answers
+function question5() {
+   document.getElementById("question").innerHTML = "5.Ntra Regulation weight ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q5_a1' name='answer'>4%";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q5_a2' name='answer'>5%";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q5_a3' name='answer'>2%";
+   //document.getElementById("answer4").innerHTML = "<input type='radio' id='q5_a4' name='answer'>Em";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question5_answer()' value='Next'>";
+} // end of question5()
+
+// question 6 and answers
+function question6() {
+   document.getElementById("question").innerHTML = "6. Look and feel score in mystery ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q6_a1' name='answer'>57.89%";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q6_a2' name='answer'>42.11% ";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q6_a3' name='answer'>57.11%";
+   //document.getElementById("answer4").innerHTML = "<input type='radio' id='q6_a4' name='answer'>10%";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question6_answer()' value='Next'>";
+} // end of question6()
+
+// question 7 and answers
+function question7() {
+   document.getElementById("question").innerHTML = "7.Mystery Shopper weight ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q7_a1' name='answer'>5%";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q7_a2' name='answer'>7%";
+  document.getElementById("answer3").innerHTML = "<input type='radio' id='q7_a3' name='answer'>3%";
+   //document.getElementById("answer4").innerHTML = "<input type='radio' id='q7_a4' name='answer'>Width";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question7_answer()' value='Next'>";
+} // end of question7()
+
+
+// question 8 and answers
+function question8() {
+   document.getElementById("question").innerHTML = "8.In FTF question if customer chooses number 2 his problem situation is";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q8_a1' name='answer'>Too early to tell ";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q8_a2' name='answer'>Problem solved ";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q8_a3' name='answer'>Problem solved after more than once ";
+   //document.getElementById("answer4").innerHTML = "<input type='radio' id='q8_a4' name='answer'>Padding";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question8_answer()' value='Next'>";
+} // end of question8()
+
+// question 9 and answers
+function question9() {
+   document.getElementById("question").innerHTML = "9. Consumer weight in KPI is ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q9_a1' name='answer'>42.11%";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q9_a2' name='answer'>57.11%";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q9_a3' name='answer'>12%";
+  // document.getElementById("answer4").innerHTML = "<input type='radio' id='q9_a4' name='answer'>Azimuth";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question9_answer()' value='Next'>";
+} // end of question9()
+
+// question 10 and answers
+function question10() {
+   document.getElementById("question").innerHTML = "10. Adsl BM on KPI ?";
+   document.getElementById("answer1").innerHTML = "<input type='radio' id='q10_a1' name='answer'>TZ AVR";
+   document.getElementById("answer2").innerHTML = "<input type='radio' id='q10_a2' name='answer'>Retail AVR ";
+   document.getElementById("answer3").innerHTML = "<input type='radio' id='q10_a3' name='answer'>100%";
+ //  document.getElementById("answer4").innerHTML = "<input type='radio' id='q10_a4' name='answer'>";
+   // display next button
+   document.getElementById("next").innerHTML = "<input type='button' onclick='question10_answer()' value='Next'>";
+} // end of question10()
+
+
+
+// check for correct answer 
+function question1_answer() {
+    if (document.getElementById("q1_a2").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question2();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question2();
+    }
+} // end of question1_answer()
+
+// check for correct answer 
+function question2_answer() {
+    if (document.getElementById("q2_a3").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question3();
+       
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question3();
+    }
+} // end of question2_answer()
+
+// check for correct answer 
+function question3_answer() {
+    if (document.getElementById("q3_a2").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question4();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question4();
+    }
+} // end of question3_answer()
+
+// check for correct answer 
+function question4_answer() {
+    if (document.getElementById("q4_a2").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question5();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question5();
+    }
+} // end of question4_answer()
+
+// check for correct answer 
+function question5_answer() {
+    if (document.getElementById("q5_a2").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question6();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question6();
+    }
+} // end of question5_answer()
+
+// check for correct answer 
+function question6_answer() {
+    if (document.getElementById("q6_a1").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question7();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question7();
+    }
+} // end of question6_answer()
+
+// check for correct answer 
+function question7_answer() {
+    if (document.getElementById("q7_a2").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question8();
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question8();
+    }
+} // end of question7_answer()
+
+// check for correct answer 
+function question8_answer() {
+    if (document.getElementById("q8_a3").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question9();   
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question9();
+    }
+} // end of question8_answer()
+
+// check for correct answer 
+function question9_answer() {
+    if (document.getElementById("q9_a3").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       question10();    
+    }
+    else {
+       alert("Sorry, is incorrect!");
+       question10();
+    }
+} // end of question9_answer()
+
+
+// check for correct answer 
+function question10_answer() {
+    if (document.getElementById("q10_a3").checked) {
+       alert("Awesome! \nYou're correct!");
+       score = score + 1;
+       totalScore();
+    }
+    else {
+       alert("Sorry, is incorrect!");   
+       totalScore();
+    }
+} // end of question10_answer()
+
+
+
+function totalScore() {	
+	question.style.display = "none";
+	answer1.style.display = "none";
+	answer2.style.display = "none";
+	answer3.style.display = "none";
+	answer4.style.display = "none";
+	
+	document.getElementById("score").innerHTML = "Congratulation! Your score is: "+ score +" /10 !";
+	
+	var button = document.getElementById("next");
+    button.style.display="none";  
+    
+	var message ="";
+	if (score >=5) {
+  	document.images["message"].src = "https://c8.alamy.com/comp/EMDXD6/good-job-well-done-stamp-EMDXD6.jpg" ;
+  	document.getElementById("img").innerHTML = "<span style='color:green'>Awesome, well done!!!</span>";
+	} //end of if
+	else  {
+  	document.images["message"].src = "https://image.shutterstock.com/image-illustration/try-harder-neon-sign-on-260nw-594249311.jpg";
+  	document.getElementById("img").innerHTML = "<span style='color:red'>Please try harder...</span>";
+  	}
+} // end of function
+
+
+
+
+
+  </script>
+  
+  
+<body>
+<div id="container">
+  <h1>Quiz Game</h1> <p>&nbsp;</p>
+  
+<div id="start">
+    <button onclick="question1()">Start here</button>
+</div>
+
+<div id="quiz">
+    <div id="question"></div>
+    <div id="answer1"></div>
+    <div id="answer2"></div>
+    <div id="answer3"></div>
+    <div id="answer4"></div>
+    <div id="next"></div>
+    
+    <div id="score"></div><br><br>
+    <img id="message" width="150" alt="">
+    <p id="img"></p>
+    </div>
+<!-- end of quiz -->
+
+</div>
+<!-- end of container -->
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
